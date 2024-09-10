@@ -29,14 +29,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,24 +36,83 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                SizedBox(
+                  width: 50,
+                  height: 50,
+                  child: ColoredBox(color: Colors.blue),
+                ),
+                SizedBox(width: 25),
+                SizedBox(
+                  width: 25,
+                  height: 25,
+                  child: ColoredBox(color: Colors.blue),
+                ),
+                SizedBox(width: 25),
+                SizedBox(
+                  width: 50,
+                  height: 50,
+                  child: ColoredBox(color: Colors.blue),
+                ),
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: 50,
+                  height: 50,
+                  child: ColoredBox(color: Colors.red),
+                ),
+                SizedBox(width: 25),
+                SizedBox(
+                  width: 25,
+                  height: 25,
+                  child: ColoredBox(color: Colors.red),
+                ),
+                SizedBox(width: 25),
+                SizedBox(
+                  width: 50,
+                  height: 50,
+                  child: ColoredBox(color: Colors.red),
+                ),
+              ],
+            ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: 50,
+                  height: 50,
+                  child: ColoredBox(color: Colors.green),
+                ),
+                SizedBox(width: 25),
+                SizedBox(
+                  width: 25,
+                  height: 25,
+                  child: ColoredBox(color: Colors.green),
+                ),
+                SizedBox(width: 25),
+                SizedBox(
+                  width: 50,
+                  height: 50,
+                  child: ColoredBox(color: Colors.green),
+                ),
+              ],
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
