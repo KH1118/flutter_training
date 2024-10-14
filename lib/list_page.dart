@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '/add_page.dart';
 
 class ListPage extends StatelessWidget {
   const ListPage({super.key});
@@ -14,7 +15,13 @@ class ListPage extends StatelessWidget {
         child: Text("リスト一覧画面"),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) {
+              return AddPage();
+            }),
+          );
+        },
         tooltip: 'Add item',
         child: const Icon(Icons.add),
       ),
